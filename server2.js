@@ -33,30 +33,6 @@ app.get('/post_register',function(req,res){
 	  });
 	});
 	
-	var transporter = nodemailer.createTransport({
-	  service: 'yahoo',
-	  auth: {
-		user: 'klvijeth@yahoo.com',
-		pass: 'qeokfmvgkeocapeb'
-	  }
-	});
-
-
-
-	var mailOptions = {
-	  from: 'klvijeth@yahoo.com',
-	  to: req.query.email,
-	  subject: 'Registration',
-	  text: 'you have successfullly registered\nstay tuned for updates'
-	};
-
-	transporter.sendMail(mailOptions, function(error, info){
-	  if (error) {
-		console.log(error);
-	  } else {
-		console.log('Email sent: ' + info.response);
-	  }
-	});
 	res.status(200).send("Registration Successful");
 	
      //console.log(response);
